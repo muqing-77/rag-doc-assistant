@@ -1,0 +1,5 @@
+Retrieval augmented generation improves LLM answers by retrieving relevant documents before generation.
+
+Vector databases store document embeddings and allow semantic search.
+
+LangChain provides tools for building LLM applications.

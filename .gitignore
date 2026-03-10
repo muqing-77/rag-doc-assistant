@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# environment variables
+.env
+
+# vector database
+vectorstore/
+chroma.sqlite3
+
+# vscode
+.vscode/
+
+# system files
+.DS_Store
+Thumbs.db
