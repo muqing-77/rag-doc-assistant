@@ -1,31 +1,33 @@
+
 # RAG Document Assistant
 
-A simple Retrieval-Augmented Generation (RAG) document assistant built with Python, LangChain, OpenAI embeddings, and ChromaDB.
+A lightweight Retrieval-Augmented Generation (RAG) document assistant built with Python, LangChain, OpenAI embeddings, ChromaDB, and Streamlit.
 
-This project demonstrates how to build an AI system that answers questions grounded in external documents using a vector database and large language models.
-
----
-
-## Features
-
-- Document ingestion pipeline
-- Text chunking
-- Embedding generation with OpenAI
-- Vector storage using ChromaDB
-- Semantic search
-- Question answering using an LLM
+This project demonstrates how to build an AI system that answers questions grounded in external documents instead of relying only on a model’s internal knowledge.
 
 ---
 
-## Project Structure
-# RAG Document Assistant
+## Overview
 
-A simple Retrieval-Augmented Generation (RAG) document assistant built with Python, LangChain, OpenAI embeddings, and ChromaDB.
+Traditional LLMs may hallucinate or fail to answer questions about private or domain-specific documents.
 
-This project demonstrates how to build an AI system that answers questions grounded in external documents using a vector database and large language models.
+This project solves that problem by using a Retrieval-Augmented Generation (RAG) pipeline:
+
+1. Load documents from local files
+2. Split them into smaller chunks
+3. Convert chunks into embeddings
+4. Store them in a vector database
+5. Retrieve the most relevant chunks for a user query
+6. Generate answers using an LLM grounded in retrieved context
 
 ---
 
+## Demo Workflow
+
+
+Document -> Chunking -> Embedding -> Vector Store
+                              ↓
+User Question -> Semantic Retrieval -> LLM Answer
 ## Features
 
 - Document ingestion pipeline
@@ -39,14 +41,11 @@ This project demonstrates how to build an AI system that answers questions groun
 
 ## Project Structure
 rag-doc-assistant/
-│
 ├── data/
-│ └── sample.txt
-│
+│   └── sample.txt
+├── app.py
 ├── ingest.py
 ├── query.py
-├── app.py
-│
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
@@ -55,13 +54,6 @@ rag-doc-assistant/
 
 ---
 
-## How It Works
-
-The pipeline consists of three main steps.
-
-### 1. Document Ingestion
-
-`ingest.py` loads documents from the `data/` directory, splits them into smaller chunks, generates embeddings, and stores them in a Chroma vector database.
 
 ---
 
